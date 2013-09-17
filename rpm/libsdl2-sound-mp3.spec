@@ -21,6 +21,23 @@ data back at her leisure.
 SDL_sound can also handle sample rate, audio format, and channel conversion
 on-the-fly and behind-the-scenes, if the programmer desires. 
 
+%package playsound
+Summary: Simple DirectMedia Layer - Sound File Decoding Library (playsound tool)
+Group: Development/Libraries
+Requires: %{name}
+
+%description playsound
+SDL_sound is a library that handles the decoding of several popular sound file
+formats, such as .WAV and .MP3. It is meant to make the programmer's sound
+playback tasks simpler. The programmer gives SDL_sound a filename, or feeds it
+data directly from one of many sources, and then reads the decoded waveform
+data back at her leisure.
+
+SDL_sound can also handle sample rate, audio format, and channel conversion
+on-the-fly and behind-the-scenes, if the programmer desires.
+
+This package contains the "playsound" utility.
+
 %package devel
 Summary: Simple DirectMedia Layer - Sound File Decoding Library (Development)
 Group: Development/Libraries
@@ -55,8 +72,12 @@ make
 %files
 %defattr(-,root,root)
 %doc README.txt CHANGELOG.txt CREDITS.txt LICENSE.txt TODO.txt
-%{_bindir}/*
 %{_libdir}/lib*.so.*
+
+%files playsound
+%defattr(-,root,root)
+%doc README.txt CHANGELOG.txt CREDITS.txt LICENSE.txt TODO.txt
+%{_bindir}/*
 
 %files devel
 %defattr(-,root,root)
